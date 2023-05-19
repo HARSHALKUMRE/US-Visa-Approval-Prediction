@@ -4,4 +4,6 @@ flask
 seaborn
 scikit-learn
 ipykernel
+pyyaml
+dill
 #-e .
