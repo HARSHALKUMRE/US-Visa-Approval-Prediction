@@ -18,7 +18,7 @@ ColumnNames:
 Numerical_columns:
   - prevailing_wage
 
-Oridinal_columns:
+Ordinal_columns:
   - has_job_experience
   - requires_job_training
   - full_time_position

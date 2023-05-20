@@ -6,4 +6,5 @@ scikit-learn
 ipykernel
 pyyaml
 dill
+imblearn
 #-e .
