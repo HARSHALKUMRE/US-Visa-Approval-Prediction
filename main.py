@@ -4,11 +4,11 @@ import numpy as np
 from visa.constant import *
 from visa.logger import logging
 from visa.exception import CustomException
-from visa.pipeline.training_pipeline import Pipeline
+from visa.pipeline.training_pipeline import TrainingPipeline
 
 def main():
     try:
-        pipeline = Pipeline()
+        pipeline = TrainingPipeline()
         pipeline.run_pipeline()
     except Exception as e:
         logging.error(f"{e}")

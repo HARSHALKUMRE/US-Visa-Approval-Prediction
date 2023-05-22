@@ -1,0 +1,2 @@
+experiment_id,initialization_timestamp,artifact_time_stamp,running_status,start_time,stop_time,excution_time,message,experiment_file_path,accuracy,is_model_accepted,created_time_stamp
+bf77fa3a-132e-400c-980d-adb022293c2c,2023-05-22-23-41-22,2023-05-22-23-41-22,True,2023-05-22 23:41:31.365205,,,Training pipeline has been started.,experiment.csv,,,2023-05-22 23:41:31.366206
