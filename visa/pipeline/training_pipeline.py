@@ -162,15 +162,15 @@ class TrainingPipeline(Thread):
             logging.info(f"Training Pipeline Completed.")
 
             stop_time = datetime.now() 
-            TrainingPipeline.experiment = Experiment(experiment_id=TrainingPipeline.experiment_id,
+            TrainingPipeline.experiment = Experiment(experiment_id=TrainingPipeline.experiment.experiment_id,
                                                      initialization_timestamp=self.config.time_stamp,
                                                      artifact_time_stamp=self.config.time_stamp,
                                                      running_status=False,
-                                                     start_time=Pipeline.experiment.start_time,
+                                                     start_time=TrainingPipeline.experiment.start_time,
                                                      stop_time=stop_time,
-                                                     excution_time=stop_time - Pipeline.experiment.start_time,
+                                                     excution_time=stop_time - TrainingPipeline.experiment.start_time,
                                                      message="Pipeline has been completed.",
-                                                     experiment_file_path=Pipeline.experiment_file_path,
+                                                     experiment_file_path=TrainingPipeline.experiment.experiment_file_path,
                                                      is_model_accepted=model_evaluation_artifact.is_model_accepted,
                                                      accuracy=model_trainer_artifact.model_accuracy
                                                      )
