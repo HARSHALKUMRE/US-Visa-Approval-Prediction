@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>US Visa Approval Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+    <a href="https://github.com/HARSHALKUMRE/Gemstone_ML_Project_With_ContinuesTraining" class="top-left-link" target="_blank">GitHub Repository Link</a>
+    <h1>US Visa Approval Prediction</h1>
+    <div class="form-box">
+    <form action="{{url_for('predict_datapoint')}}" method="POST">
+        <div class="form-group">
+            <label for="continent">Continent:</label>
+            <select id="continent" name="continent">
+            <option value="Asia">Asia</option>
+            <option value="Africa">Africa</option>
+            <option value="North America">North America</option>
+            <option value="Europe">Europe</option>
+            <option value="South America">South America</option>
+            <option value="Oceania">Oceania</option>
+            </select>
+        </div>
+    
+        <div class="form-group"> 
+            <label for="education_of_employee">Education of Employee:</label>
+            <select id="education_of_employee" name="education_of_employee">
+            <option value="High School">High School</option>
+            <option value="Master's">Master's</option>
+            <option value="Bachelor's">Bachelor's</option>
+            <option value="Doctorate">Doctorate</option>
+            </select>
+        </div>
+
+        <div class="form-group">  
+            <label for="has_job_experience">Employee Has Job Experience:</label>
+            <select id="has_job_experience" name="has_job_experience">
+            <option value="N">No</option>
+            <option value="Y">Yes</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="requries_job_training">Employee Has Requried Job Training:</label>
+            <select id="requries_job_training" name="requries_job_training">
+            <option value="N">No</option>
+            <option value="Y">Yes</option>
+            </select>
+        </div>
+      
+        <div class="form-group">
+            <label for="no_of_employees">No of Employees:</label>
+            <input type="text" id="no_of_employees" name="no_of_employees" placeholder="Enter no of employees (int)">
+        </div>
+      
+        <div class="form-group">
+            <label for="company_age">Company Age:</label>
+            <input type="text" id="company_age" name="company_age" placeholder="Enter company age (int)">
+        </div>         
+      
+    <div class="form-group">
+      <label for="region_of_employment">Region of Employment:</label> 
+      <select id="region_of_employment" name="region_of_employment">
+        <option value="West">West</option>
+        <option value="Northeast">Northeast</option>
+        <option value="South">South</option>
+        <option value="Midwest">Midwest</option>
+        <option value="Island">Island</option>
+      </select>
+    </div>
+      
+    <div class="form-group">
+        <label for="prevailing_wage">Prevailing Wage:</label>
+        <input type="text" id="prevailing_wage" name="prevailing_wage" placeholder="Enter prevailing wage (float)">
+    </div>
+      
+    <div class="form-group">
+      <label for="unit_of_wage">Unit of wage:</label>
+      <select id="unit_of_wage" name="unit_of_wage">  'Hour', 'Year', 'Week', 'Month'
+        <option value="Hour">Hour</option>
+        <option value="Year">Year</option>
+        <option value="Week">Week</option>
+        <option value="Month">Month</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+        <label for="full_time_position">Employee Has Full Time Position:</label>
+        <select id="full_time_position" name="full_time_position">
+        <option value="N">No</option>
+        <option value="Y">Yes</option>
+        </select>
+    </div>
+    
+    
+    
+    <div style="clear:both;"></div>
+      <input type="submit" value="Submit">
+    </form>
+    </div>
+    <h2>
+      Predicted Value is : {{ results }}
+    </h2>
+  </body>
+</html>
