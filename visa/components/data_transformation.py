@@ -84,7 +84,7 @@ class DataTransformation:
             ordinal_pipeline = Pipeline(
                 steps=[
                     ('imputer', SimpleImputer(strategy='most_frequent')),
-                    ('ordinal_encoder', OrdinalEncoder()),
+                    ('ordinal_encoder', OrdinalEncoder(handle_unknown="error")),
                     ('scaler', StandardScaler())
                 ]
             )

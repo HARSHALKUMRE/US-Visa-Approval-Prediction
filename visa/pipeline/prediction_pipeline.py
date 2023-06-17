@@ -48,17 +48,18 @@ class USVisaData:
     def get_us_visa_data_as_dict(self):
         try:
             input_data = {
-                "continent":[self.continent],
-                "education_of_employee":[self.education_of_employee],
-                "has_job_experience":[self.has_job_experience],
-                "requires_job_training":[self.requires_job_training],
-                "no_of_employees":[self.no_of_employees],
-                "company_age":[self.company_age],
-                "region_of_employment":[self.region_of_employment],
-                "prevailing_wage":[self.prevailing_wage],
-                "unit_of_wage":[self.unit_of_wage],
-                "full_time_position":[self.full_time_position]
+                "continent": [self.continent],
+                "education_of_employee": [self.education_of_employee],
+                "has_job_experience": [self.has_job_experience],
+                "requires_job_training": [self.requires_job_training],
+                "no_of_employees": [self.no_of_employees],
+                "company_age": [self.company_age],
+                "region_of_employment": [self.region_of_employment],
+                "prevailing_wage": [self.prevailing_wage],
+                "unit_of_wage": [self.unit_of_wage],
+                "full_time_position": [self.full_time_position]
             }
+            return input_data
         except Exception as e:
             raise CustomException(e, sys) from e
 
@@ -79,7 +80,7 @@ class USVisaPredictor:
             latest_model_path = os.path.join(latest_model_dir, file_name)
             return latest_model_path
         except Exception as e:
-            raise CustomExcetion(e, sys) from e
+            raise CustomException(e, sys) from e
 
     def predict(self, X):
         try:

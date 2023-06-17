@@ -1,7 +1,6 @@
 import os, sys
 from visa.exception import CustomException
 from visa.logger import logging
-from visa.constant import *
 from visa.entity.config_entity import ModelPusherConfig
 from visa.entity.artifact_entity import ModelEvaluationArtifact, ModelPusherArtifact
 import shutil
@@ -35,8 +34,8 @@ class ModelPusher:
                  f"Trained model: {evaluated_model_file_path} is copied in export dir:[{export_model_file_path}]"
             )
             model_pusher_artifact = ModelPusherArtifact(
-                export_model_file_path=export_model_file_path, 
-                is_model_pusher=True
+                is_model_pusher=True,
+                export_model_file_path=export_model_file_path,
             )
 
             logging.info(f"Model Pusher Artifact: [{model_pusher_artifact}]")

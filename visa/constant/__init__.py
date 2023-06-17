@@ -72,7 +72,6 @@ MODEL_PATH_KEY = "model_path"
 
 # Model pusher related variable or constant
 MODEL_PUSHER_CONFIG_KEY = "model_pusher_config"
-MODEL_PUSHER_ARTIFACT_DIR = "model_pusher"
 MODEL_PUSHER_EXPORT_MODEL_DIR_KEY = "model_export_dir"
 
 EXPERIMENT_DIR_NAME = "experiment"

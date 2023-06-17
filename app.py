@@ -3,6 +3,13 @@ from flask_cors import CORS, cross_origin
 from visa.pipeline.training_pipeline import TrainingPipeline
 from visa.pipeline.prediction_pipeline import USVisaData, USVisaPredictor 
 from visa.exception import CustomException
+from visa.constant import CONFIG_DIR, get_current_time_stamp
+import os
+import sys
+
+ROOT_DIR = os.getcwd()
+SAVED_MODELS_DIR_NAME = "saved_models/"
+MODEL_DIR = os.path.join(ROOT_DIR, SAVED_MODELS_DIR_NAME)
 
 application = Flask(__name__)
 app = application
@@ -37,8 +44,8 @@ def predict_datapoint():
 
         print(pred_df)
 
-        predict_pipeline = USVisaPredictor()
-        pred = predict_pipeline.predict(pred_df)[0]
+        predict_pipeline = USVisaPredictor(model_dir=MODEL_DIR)
+        pred = predict_pipeline.predict(X=pred_df)[0]
         if pred == 1:
             results = "The US Visa Approved"
         else:
